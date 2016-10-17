@@ -1,5 +1,5 @@
 # drawerlayout
-a vue.js drawer with more function
+a vue.js drawer with more function for vue2.x
 > A Vue.js project
 
 ##demo
@@ -22,7 +22,10 @@ npm run build
 
 ```html
 	<!-- drawer-->
-    <drawer :show.sync="drawerShow" :pos="pos" :tran="tran">
+    <drawer 
+    :show="drawerShow" 
+    :pos="pos" :tran="tran"
+    @change-show="changeDrawerShow">
     <!-- drawerlayout with slot="drawer"-->
       <div class="layout" slot="drawer" >
         <h2><a href="#">bajian drawer</a></h2>
@@ -35,6 +38,11 @@ npm run build
       <button v-on:click="tranFlip">tranChange</button><br><br>
       <button v-on:click="drawerToggle">toggle</button>
     </drawer>
+
+
+    changeDrawerShow(state) {
+      this.drawerShow=state;
+    }
 ```
 
 ## Api
@@ -46,6 +54,7 @@ npm run build
 | show.sync            | `Boolean`  | `false` | the drawer visibility，set `true` to show the drawer |
 | on-hide   | `Function` | `undefined`       | the drawer hide listener  |
 | on-show   | `Function` | `undefined`       | the drawer show listener  |
+| change-show   | `Function` | `undefined`       | as vue2.0 deprecated the `sync`,this event must be called to change drawer state by the component itself |
 | ==================== | ========= | ============ | =================== |
 
 
