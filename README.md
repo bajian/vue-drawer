@@ -2,7 +2,7 @@
 a vue.js drawer with more function for vue2.x
 > A Vue.js project
 
-##demo
+## demo
 
 [online-demo](https://cdn.rawgit.com/bajian/vue-drawer/master/dist/demo1.html)
 
